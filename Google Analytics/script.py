@@ -15,7 +15,7 @@ param_default_event = Parameter('{ "name": "default_event", "schema": {"type": "
 def local_action_Track(args = None):
   '''{ "title": "Track", "desc": "Track a Google Analytics event."}'''
 
-  if not 'type' in args or args['type'] = 'pageview':
+  if not 'type' in args or args['type'] == 'pageview':
     _track_pageview(args)
 
 """
@@ -58,3 +58,7 @@ def _track_event(args):
     value:  args['value']
   }
   tracker.track_event(event, session, visitor)
+
+
+def main(arg = None):
+  print 'Main sequencer started.'
